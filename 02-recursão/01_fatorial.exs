@@ -12,8 +12,13 @@ defmodule Fatorial do
   """
   @spec run(integer) :: integer
   def run(n) do
-    # FIXME
+    cond do
+      n == 1 or n == 0 -> 1
+      true -> n * run(n-1)
+    end
+
   end
+
 end
 
 defmodule FatorialTest do
