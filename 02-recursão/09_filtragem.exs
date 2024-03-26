@@ -1,3 +1,4 @@
+ExUnit.start()
 defmodule FiltragemLista do
   @doc """
   Filtra elementos de uma lista utilizando uma função de filtro.
@@ -9,7 +10,11 @@ defmodule FiltragemLista do
   """
   @spec run(list, (any -> boolean)) :: list
   def run(lista, filtro) do
-    # FIXME
+     [head|tail] = lista
+     if head == filtro do
+       a = [head] ++ [run(tail,filtro)]
+       a
+     end
   end
 end
 

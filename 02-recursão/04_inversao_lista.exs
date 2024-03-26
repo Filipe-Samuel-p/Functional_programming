@@ -6,9 +6,8 @@ defmodule InversaoLista do
   dos elementos em uma lista usando recursão.
   """
   @spec run(list(integer)) :: list(integer)
-  def run(xs) do
-     [head | tail] = xs
-     lista = [head|run(tail)]
+  def run([head|tail]) do
+
 
   end
 end
