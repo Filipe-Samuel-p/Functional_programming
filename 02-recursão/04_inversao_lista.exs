@@ -7,7 +7,9 @@ defmodule InversaoLista do
   """
   @spec run(list(integer)) :: list(integer)
   def run(xs) do
-    # FIXME
+     [head | tail] = xs
+     lista = [head|run(tail)]
+
   end
 end
 

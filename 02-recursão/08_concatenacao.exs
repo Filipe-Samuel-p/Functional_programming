@@ -9,7 +9,7 @@ defmodule ConcatenacaoListas do
   """
   @spec run(list, list) :: list
   def run(lista1, lista2) do
-    # FIXME
+    lista1 ++ lista2
   end
 end
 

@@ -7,8 +7,15 @@ defmodule SomaLista do
   """
   @spec run(list(integer)) :: integer
   def run(xs) do
-    # FIXME
+    if xs == [] do
+      0
+    else
+      [head|tail] = xs
+      head + run(tail)
+    end
+
   end
+
 end
 
 defmodule SomaListaTest do

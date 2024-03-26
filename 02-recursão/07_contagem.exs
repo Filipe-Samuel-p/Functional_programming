@@ -12,7 +12,13 @@ defmodule ContagemElementos do
   """
   @spec run(list) :: integer
   def run(lista) do
-    # FIXME
+    if lista == [] do
+      0
+    else
+      [head|tail] = lista
+      1 + run(tail)
+    end
+
   end
 end
 
