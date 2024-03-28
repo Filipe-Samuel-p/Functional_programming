@@ -7,13 +7,11 @@ defmodule SomaLista do
   """
   @spec run(list(integer)) :: integer
   def run(xs) do
-    if xs == [] do
-      0
+    if xs == [] do 0
     else
       [head|tail] = xs
       head + run(tail)
     end
-
   end
 
 end

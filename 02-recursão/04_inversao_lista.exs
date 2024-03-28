@@ -6,9 +6,13 @@ defmodule InversaoLista do
   dos elementos em uma lista usando recursão.
   """
   @spec run(list(integer)) :: list(integer)
-  def run([head|tail]) do
-
-
+  def run(xs,acc\\[]) do
+    cond do
+      xs == [] -> acc
+      true ->  [h|t] = xs
+               acc = [h|acc]
+               run(t,acc)
+    end
   end
 end
 

@@ -9,13 +9,16 @@ defmodule FiltragemLista do
       [2, 4]
   """
   @spec run(list, (any -> boolean)) :: list
-  def run(lista, filtro) do
-     [head|tail] = lista
-     if head == filtro do
-       a = [head] ++ [run(tail,filtro)]
-       a
-     end
+  def run(lista, filtro, acc\\[]) do
+    lista = [h|t]
+    cond do
+      t == [] -> acc
+      h == filtro -> acc = [h|acc]
+      true -> run(t,h,acc)
+    end
+
   end
+
 end
 
 defmodule FiltragemListaTest do

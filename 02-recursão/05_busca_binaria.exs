@@ -20,12 +20,10 @@ defmodule BuscaBinaria do
   @spec run(list(integer), integer) :: boolean
   def run(xs, x) do
    [head|tail] = xs
-   if head == x do true
-   else
     cond do
+      head == x -> true
       tail == [] -> false
       true -> run(tail,x)
-    end
    end
   end
 end

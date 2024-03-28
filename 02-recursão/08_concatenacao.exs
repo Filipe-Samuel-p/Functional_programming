@@ -10,7 +10,13 @@ defmodule ConcatenacaoListas do
   """
   @spec run(list, list) :: list
   def run(lista1, lista2) do
-      lista1 ++ lista2
+     cond do
+       lista1 == [] -> lista2
+       lista2 == [] -> lista1
+       true ->  [head | tail] = lista2
+                lista1 = lista1 ++ [head]
+                run(lista1,tail)
+     end
   end
 end
 
