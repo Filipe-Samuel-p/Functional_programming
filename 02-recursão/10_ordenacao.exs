@@ -1,3 +1,5 @@
+ExUnit.start()
+
 defmodule OrdenacaoLista do
   @doc """
   Ordena uma lista de inteiros.
@@ -9,8 +11,16 @@ defmodule OrdenacaoLista do
   """
   @spec run(list(integer)) :: list(integer)
   def run(lista) do
-
+    quick_sort(lista)
   end
+    def quick_sort([head|tail]) do
+      esquerda = Enum.filter(tail, &(&1 < head)) #filter é muito bom!!
+      direita = Enum.filter(tail, &(&1 >=head))
+
+      quick_sort(esquerda) ++ [head] ++ quick_sort(direita)
+    end
+    def quick_sort([]), do: []
+
 end
 
 defmodule OrdenacaoListaTest do
@@ -18,6 +28,14 @@ defmodule OrdenacaoListaTest do
 
   test "ordena uma lista de inteiros" do
     assert OrdenacaoLista.run([5, 3, 4, 1, 2]) == [1, 2, 3, 4, 5]
+  end
+
+  test "Uma lista com apenas um elemento" do
+    assert OrdenacaoLista.run([5]) == [5]
+  end
+
+  test "Uma lista vazia" do
+    assert OrdenacaoLista.run([]) == []
   end
 
   test "ordena uma lista já ordenada" do

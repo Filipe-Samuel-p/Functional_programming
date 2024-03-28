@@ -9,15 +9,14 @@ defmodule FiltragemLista do
       [2, 4]
   """
   @spec run(list, (any -> boolean)) :: list
-  def run(lista, filtro, acc\\[]) do
-    lista = [h|t]
-    cond do
-      t == [] -> acc
-      h == filtro -> acc = [h|acc]
-      true -> run(t,h,acc)
-    end
+  def run([head|tail], filtro, acc\\[]) do
 
+    cond do
+      filtro.(head) == true -> run(tail,filtro,[head|acc])
+      true -> run(tail,filtro,acc)
+    end
   end
+  def run([], _filtro, acc), do: Enum.reverse(acc)
 
 end
 
