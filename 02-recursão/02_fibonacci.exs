@@ -14,8 +14,13 @@ defmodule Fibonnacci do
   de um número da sequência somado ao seu antecessor.
   """
   @spec run(integer) :: list(integer)
-  def run(n) do
-    # FIXME
+  def run(n) when n > 0 do
+    fibonacci(n,[1,1])
+    |> Enum.reverse()
+  end
+  defp fibonacci(n, acc) when n <= 2, do: acc
+  defp fibonacci(n, [second_last,last|_]=acc) do
+    fibonacci(n-1,[last+second_last|acc])
   end
 end
 
