@@ -16,8 +16,14 @@ defmodule DuplicacaoLista do
       []
   """
   @spec run(list(any)) :: list(any)
-  def run(lista) do
-    # FIXME
+  def run(lista,acc\\[]) do
+    cond do
+      lista == [] -> Enum.reverse(acc)
+      true -> [head|tail] = lista
+              acc = [head|acc]
+              acc = [head|acc]
+              run(tail,acc)
+    end
   end
 end
 

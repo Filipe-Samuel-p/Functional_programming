@@ -17,9 +17,11 @@ defmodule Subconjuntos do
       [[]]
   """
   @spec run(list(any)) :: list(list(any))
-  def run(lista) do
-    # FIXME
+  def run(lista,acc\\[]) do
+
+
   end
+
 end
 
 defmodule SubconjuntosTest do

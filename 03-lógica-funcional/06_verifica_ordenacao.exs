@@ -18,8 +18,17 @@ defmodule ListaOrdenada do
   """
   @spec run(list(integer)) :: boolean
   def run(nums) do
-    # FIXME
+    cond do
+      nums == quicksort(nums) -> true
+      true -> false
+    end
   end
+   def quicksort ([head|tail]) do # ordenacao da lista recebida, para depois comparar
+     left = Enum.filter(tail, &(&1 < head))
+     right = Enum.filter(tail, &(&1 >= head))
+     quicksort(left) ++ [head] ++ quicksort(right)
+   end
+   def quicksort([]), do: []
 end
 
 defmodule ListaOrdenadaTest do

@@ -17,9 +17,21 @@ defmodule SomaImpares do
       0
   """
   @spec run(list(integer)) :: integer
-  def run(nums) do
-    # FIXME
+  def run(nums,acc\\0) do
+   cond do
+     nums == [] -> acc
+     true -> [h|t] = nums
+             if rem(h,2) != 0 do
+               acc = h + acc
+               run(t,acc)
+             else
+              run(t,acc)
+              end
+   end
+
   end
+
+
 end
 
 defmodule SomaImparesTest do
