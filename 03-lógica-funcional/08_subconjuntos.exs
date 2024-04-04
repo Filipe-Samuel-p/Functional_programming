@@ -19,7 +19,6 @@ defmodule Subconjuntos do
   @spec run(list(any)) :: list(list(any))
   def run(lista,acc\\[]) do
 
-
   end
 
 end
