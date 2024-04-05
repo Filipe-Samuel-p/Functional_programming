@@ -18,7 +18,7 @@ defmodule InversaoString do
   """
   @spec run(String.t()) :: String.t()
   def run(s) do
-    String.split(s,"")
+    String.split(s,"   ")
     |>IO.inspect()
   end
 end
