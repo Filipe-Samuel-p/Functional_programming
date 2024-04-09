@@ -18,10 +18,17 @@ defmodule InversaoString do
   """
   @spec run(String.t()) :: String.t()
   def run(s) do
-    String.split(s,"   ")
-    |>IO.inspect()
+    lista = to_charlist(s)
+    inversao(lista, []) |> to_string()
+  end
+
+  def inversao([], inv_list), do: inv_list
+
+  def inversao([head | tail], inv_list) do
+    inversao(tail, [head | inv_list])
   end
 end
+
 
 defmodule InversaoStringTest do
   use ExUnit.Case, async: true
