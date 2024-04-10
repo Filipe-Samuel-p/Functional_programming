@@ -14,7 +14,7 @@ defmodule CompreensaoLista do
   """
   @spec run(list(integer)) :: list(integer)
   def run(nums) do
-    for x <- nums, rem(x,2) == 0, do: x * 4
+    for x <- nums, rem(x,2) == 0, do: x * 4 #lembra list compreehension
   end
 end
 
