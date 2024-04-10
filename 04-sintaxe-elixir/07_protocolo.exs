@@ -15,6 +15,7 @@ defmodule ImplementacaoProtocolo do
   """
   defprotocol MinhaStruct do
       def formatar(%{name: nil}), do: "MinhaStruct formatada: #{name}"
+
   end
 
   ...
