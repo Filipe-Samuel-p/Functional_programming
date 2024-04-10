@@ -16,6 +16,7 @@ defmodule UsoAlias do
   @spec run() :: atom
   def run() do
     alias UsoAlias.HW
+
     :ok
   end
 end
