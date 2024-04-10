@@ -14,7 +14,7 @@ defmodule CompreensaoLista do
   """
   @spec run(list(integer)) :: list(integer)
   def run(nums) do
-    # FIXME
+    for x <- nums, rem(x,2) == 0, do: x * 4
   end
 end
 

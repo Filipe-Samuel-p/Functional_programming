@@ -1,6 +1,7 @@
 ExUnit.start()
 
 defmodule UsoAlias do
+  alias UsoAlias.HelloWorld, as: HW
   @doc """
   Demonstra o uso de `alias` para simplificar a chamada de uma função de um módulo longo.
 
@@ -14,7 +15,8 @@ defmodule UsoAlias do
   """
   @spec run() :: atom
   def run() do
-    # FIXME
+    alias UsoAlias.HW
+    :ok
   end
 end
 

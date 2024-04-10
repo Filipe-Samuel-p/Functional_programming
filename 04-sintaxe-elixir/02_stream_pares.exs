@@ -14,7 +14,8 @@ defmodule StreamNumerosPares do
   """
   @spec run() :: list(integer)
   def run() do
-    # FIXME
+    Stream.iterate(2, &(&1 + 2))  # left |> right
+    |> Enum.take(5)     #pin operator: passa o bloco da esquerda como primeiro argumento de uma funcao do lado direito
   end
 end
 

@@ -12,9 +12,10 @@ defmodule UsoModuleAttributes do
       iex> UsoModuleAttributes.run()
       "O valor da constante é: 42"
   """
+  @constante 42
   @spec run() :: String.t()
   def run() do
-    # FIXME
+   IO.inspect("O valor da constante é: #{@constante}") #lembra o f-strings em python
   end
 end
 

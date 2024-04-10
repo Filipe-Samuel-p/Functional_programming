@@ -14,7 +14,8 @@ defmodule EnumMap do
   """
   @spec run(list(integer)) :: list(integer)
   def run(nums) do
-    # FIXME
+    Enum.map(nums, fn x -> x *2 end)  #Enum.map, recebe dois parametros e retorna uma lista cujo os elementos sao interacoes
+                                      # determinadas pela funcao anonima fn. Os elementos da nova lista sao determinados pela funcao anonima
   end
 end
 

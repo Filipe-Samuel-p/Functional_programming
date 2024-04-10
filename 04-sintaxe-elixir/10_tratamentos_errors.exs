@@ -14,7 +14,14 @@ defmodule TratamentoErros do
   """
   @spec run(map, atom) :: String.t()
   def run(mapa, chave) do
-    # FIXME
+    try do
+      Map.fetch!(mapa, chave)
+    rescue
+     KeyError -> "Chave não encontrada"
+    end
+
+
+
   end
 end
 

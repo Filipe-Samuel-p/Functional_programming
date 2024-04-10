@@ -13,9 +13,17 @@ defmodule ImplementacaoProtocolo do
       iex> ImplementacaoProtocolo.formatar(%MinhaStruct{name: "Elixir"})
       "MinhaStruct formatada: Elixir"
   """
+  defprotocol MinhaStruct do
+      def formatar(%{name: nil}), do: "MinhaStruct formatada: #{name}"
+  end
+
+  ...
+
+
+
   @spec formatar(map) :: String.t()
   def formatar(struct) do
-    # FIXME
+     IO.inspect(MinhaStruct.formatar(struct))
   end
 end
 

@@ -16,20 +16,26 @@ defmodule CriacaoStruct do
   """
   @spec criar(integer, integer) :: map
   @spec mover(map, integer, integer) :: map
-  def criar(x, y) do
-    # FIXME
+
+  defmodule Ponto do
+    defstruct x: nil,y: nil
   end
 
-  def mover(ponto, dx, dy) do
-    # FIXME
+  def criar(x, y) do
+    %Ponto{x: x, y: y}
+  end
+
+  def mover(ponto,dx,dy) do
+   %{ponto | x: ponto.x + dx, y: ponto.y + dy}
   end
 end
 
 defmodule CriacaoStructTest do
+  alias CriacaoStruct.Ponto
   use ExUnit.Case, async: true
 
   test "move o ponto corretamente" do
     ponto = CriacaoStruct.criar(2, 3)
-    assert CriacaoStruct.mover(ponto, 5, 7) == %{x: 7, y: 10}
+    assert CriacaoStruct.mover(ponto, 5, 7) == %Ponto{x: 7, y: 10}
   end
 end
